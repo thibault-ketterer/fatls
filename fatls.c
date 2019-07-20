@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
 	if (fd == -1)
 		handle_error("open");
 
-	for ( ; ; ) {
+	for (;;) {
 		nread = syscall(SYS_getdents, fd, buf, BUF_SIZE);
 		if (nread == -1)
 			handle_error("getdents");
@@ -62,5 +62,6 @@ int main(int argc, char *argv[])
 		}
 	}
 
+	printf("thanks. for using this fatls.\n");
 	exit(EXIT_SUCCESS);
 }
